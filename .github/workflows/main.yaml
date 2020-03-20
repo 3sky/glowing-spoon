@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Check my-json-server
+    steps:
+    - name: Check my-json-server
+      id: check-it
+      uses: 3sky/glowing-spoon@v0.0.1
+      with:
+        hostname: 'my-json-server.typicode.com'
+        path: '/typicode/demo/db'
+        filter: '.profile.name'
+        expected: 'typicode'
+    - name: Get the output
+      run: echo "Resutl is ${{ steps.check-stg.outputs.result }}"

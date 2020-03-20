@@ -1,6 +1,6 @@
 # action.yml
-name: 'Random name'
-description: 'Random description'
+name: 'Endpoint check'
+description: 'Wrapper on wget and jq for make response validation'
 inputs:
   hostname:
     description: 'Hostname to check'
@@ -15,7 +15,7 @@ inputs:
     required: true
     default: '.profile.name'
   expected:
-    description: 'What value do you expect'
+    description: 'Expected value from request'
     required: true
     default: 'typicode'
   unsecure:
@@ -23,7 +23,7 @@ inputs:
     required: false
     default: false
 outputs:
-  result: # id of output
+  result:
     description: 'Result of check'
 runs:
   using: 'docker'
