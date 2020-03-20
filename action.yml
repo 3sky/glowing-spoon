@@ -1,0 +1,37 @@
+# action.yml
+name: 'Random name'
+description: 'Random description'
+inputs:
+  hostname:
+    description: 'Hostname to check'
+    required: true
+    default: 'my-json-server.typicode.com'
+  path:
+    description: 'Path of endpoint'
+    required: true
+    default: '/typicode/demo/db'
+  filter:
+    description: 'jq filter'
+    required: true
+    default: '.profile.name'
+  expected:
+    description: 'What value do you expect'
+    required: true
+    default: 'typicode'
+  unsecure:
+    description: 'Skip certification validation'
+    required: false
+    default: false
+outputs:
+  result: # id of output
+    description: 'Result of check'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.hostname }}
+    - ${{ inputs.path }}
+    - ${{ inputs.filter }}
+    - ${{ inputs.expected }}
+    - ${{ inputs.unsecure }}
+
