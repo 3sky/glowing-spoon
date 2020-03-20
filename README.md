@@ -33,6 +33,7 @@ The result of command.
 
 ## Example usage
 
+```yaml
 - name: Check my-json-server
   uses: 3sky/glowing-spoon@v0.0.1
   with:
@@ -40,3 +41,4 @@ The result of command.
     path: '/typicode/demo/db'
     filter: '.profile.name'
     expected: 'typicode'
+```
