@@ -1,6 +1,10 @@
 # action.yml
 name: 'Endpoint check'
+author: '3sky'
 description: 'Wrapper on wget and jq for make response validation'
+branding:
+  icon: 'check-square'
+  color: 'white'
 inputs:
   hostname:
     description: 'Hostname to check'
